@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
-app.use(cors({ origin: "*" })); // Wildcard CORS
+app.use(cors({ origin: ['https://mypoems.netlify.app/','http://localhost:5173']})); // Wildcard CORS
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB Connection
