@@ -3,7 +3,7 @@ import axios from "axios";
 // Create instance
 const api = axios.create({
   //baseURL: "http://localhost:5000/api", 
-  baseURL: "https://poems-ch7vz8lls-prajwal-neupanes-projects.vercel.app/api", 
+  baseURL: "https://poems-6j8u62mgl-prajwal-neupanes-projects.vercel.app/api", 
   headers:{
     "Content-Type": "application/json",
   }
