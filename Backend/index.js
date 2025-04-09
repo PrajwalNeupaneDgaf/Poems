@@ -8,7 +8,9 @@ const app = express();
 // Middleware
 // app.use(cors({ origin: ['https://mypoems.netlify.app/','http://localhost:5173']})); // Wildcard CORS
 app.use(cors({
-  origin: 'https://mypoems.netlify.app',  // Allow your frontend
+  origin: 'https://mypoems.netlify.app', // or use '*' to allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json()); // Parse JSON bodies
 
