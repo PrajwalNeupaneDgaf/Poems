@@ -7,11 +7,13 @@ const app = express();
 
 // Middleware
 // app.use(cors({ origin: ['https://mypoems.netlify.app/','http://localhost:5173']})); // Wildcard CORS
-app.use(cors({
-  origin: 'https://mypoems.netlify.app', // or use '*' to allow all origins
+const corsOptions = {
+  origin: 'https://mypoems.netlify.app', // Frontend domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB Connection
