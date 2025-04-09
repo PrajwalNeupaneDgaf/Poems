@@ -6,18 +6,10 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
-// app.use(cors({ origin: ['https://mypoems.netlify.app/','http://localhost:5173','*']})); // Wildcard CORS
 app.use(cors({
-  origin: '*',  // Allows any origin
-  methods: ['GET', 'POST'],
+  origin: ['http://localhost:5173', 'http://www.localhost:5173',"https://mypoems.netlify.app","https://github.com"], 
+  credentials: true, // Allow cookies and credentials
 }));
-// const corsOptions = {
-//   origin: 'https://mypoems.netlify.app', // Frontend domain
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization']
-// };
-
-// app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB Connection
